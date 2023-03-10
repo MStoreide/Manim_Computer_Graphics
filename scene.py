@@ -1,8 +1,9 @@
-from manim import *
+#Phong Model
 
-class CreateCircle(Scene):
+import manim
+
+class PhongBRDFModel(Scene):
     def construct(self):
-        circle = Circle()  # create a circle
-        circle.set_fill(PINK, opacity=0.5)  # set the color and transparency
-        self.play(Create(circle))  # show the circle on screen
-    
+        formula = MathTex(r"fr,s(wi, wr)")
+        self.play(Write(formula), run_time=3)
+        self.wait
