@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/Radiometry/1080p60/partial_movie_files/Radiometry/2902699114_2719999233_223132457.mp4'
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/Radiometry/1080p60/partial_movie_files/Radiometry/3931933789_329969645_4277833125.mp4'
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/Radiometry/1080p60/partial_movie_files/Radiometry/3931933789_370910586_1360061083.mp4'
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/Radiometry/1080p60/partial_movie_files/Radiometry/3931933789_329969645_3547520947.mp4'
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/Radiometry/1080p60/partial_movie_files/Radiometry/3931933789_613492349_3828168139.mp4'
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/Radiometry/1080p60/partial_movie_files/Radiometry/3931933789_329969645_4269939873.mp4'
