@@ -9,14 +9,12 @@ class Radiometry(Scene):
         colorlab.scale(1.2)
         colorlabtext = Text("Colourlab")
 
-        self.wait(2)
+        self.wait()
 
-        self.play(FadeIn(colorlab))
-        self.play(Write(colorlabtext))
-        self.wait(2)
+        self.play(FadeIn(colorlab, shift=RIGHT*2), Write(colorlabtext, shift=LEFT*2))
+        self.wait(1)
 
-        self.play(FadeOut(colorlab))
-        self.play(Unwrite(colorlabtext))
+        self.play(FadeOut(colorlab, shift=LEFT), Unwrite(colorlabtext, shift=RIGHT))
 
         self.wait()
 
@@ -26,7 +24,12 @@ class Radiometry(Scene):
 
         self.wait(2)
 
-        # Add a fancy light animation here.
+# Add a fancy light animation here.
+
+        #radarrow = [Arrow(2 * LEFT, 2 * DR)]
+        #irrarrow = [Arrow(2 * DR, 2 * UR)]
+        #self.play(GrowArrow(radarrow))
+        #self.play(GrowArrow(irrarrow))
 
         self.play(Unwrite(title, reverse=False))
 
