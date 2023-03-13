@@ -5,11 +5,38 @@ from manim import *
 class Radiometry(Scene):
     def construct(self):
 
-        #Colorlab Intro
+        colorlab = ImageMobject("CLsmall.png")
+        colorlab.scale(1.2)
+        colorlabtext = Text("Colourlab")
+
+        self.wait(2)
+
+        self.play(FadeIn(colorlab))
+        self.play(Write(colorlabtext))
+        self.wait(2)
+
+        self.play(FadeOut(colorlab))
+        self.play(Unwrite(colorlabtext))
+
+        self.wait()
+
+# Title
+        title = Text("Radiometry")
+        self.play(Write(title))
+
+        self.wait(2)
+
+        # Add a fancy light animation here.
+
+        self.play(Unwrite(title, reverse=False))
+
+# Begin Info
 
         radiance = MathTex(r"L(x,\omega) \equiv \frac{dI(x \omega)}{dA} = \frac{d^2 \Phi (x, \omega)}{d \omega dA}")
         self.play(Write(radiance, run_time=2))
         self.wait()
+
+        # Same anim as before, but only first arrow. 
 
         self.play(FadeOut(radiance))
 
@@ -17,9 +44,10 @@ class Radiometry(Scene):
 
         irradiance = MathTex(r"E(x) = lim _{\Delta A \to 0} \frac{\Delta \Phi}{\Delta A} = \frac{d \Phi}{dA}")
         formula2 = MathTex(r"E(x, \omega) = L(x, \omega) \cos \theta d\omega") 
-        formula2.next_to(irradiance, DOWN, buff=0.5) #It does not like this for some reason.
-        self.play(Write(irradiance, formula2, run_time=2))
+        self.play(Write(irradiance, run_time=2))
         self.wait()
+
+        #Same anim, continuatuin, but with second arrow.
 
 
  #       inversesquarelaw = MathTex(r"E \propto \frac{1}{r^2}")
