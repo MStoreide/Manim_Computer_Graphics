@@ -16,7 +16,9 @@ class Radiometry(Scene):
         self.wait()
 
         irradiance = MathTex(r"E(x) = lim _{\Delta A \to 0} \frac{\Delta \Phi}{\Delta A} = \frac{d \Phi}{dA}")
-        self.play(Write(irradiance, run_time=2))
+        formula2 = MathTex(r"E(x, \omega) = L(x, \omega) \cos \theta d\omega") 
+        formula2.next_to(irradiance, DOWN, buff=0.5) #It does not like this for some reason.
+        self.play(Write(irradiance, formula2, run_time=2))
         self.wait()
 
 
