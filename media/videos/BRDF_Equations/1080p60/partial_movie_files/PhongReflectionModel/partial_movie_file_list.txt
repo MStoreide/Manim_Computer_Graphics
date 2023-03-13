@@ -1,0 +1,9 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/BRDF_Equations/1080p60/partial_movie_files/PhongReflectionModel/2902699114_459711937_223132457.mp4'
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/BRDF_Equations/1080p60/partial_movie_files/PhongReflectionModel/3931933789_329969645_4133763635.mp4'
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/BRDF_Equations/1080p60/partial_movie_files/PhongReflectionModel/3931933789_1568013266_3695636163.mp4'
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/BRDF_Equations/1080p60/partial_movie_files/PhongReflectionModel/3931933789_125286499_21198104.mp4'
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/BRDF_Equations/1080p60/partial_movie_files/PhongReflectionModel/3931933789_916336263_3142342690.mp4'
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/BRDF_Equations/1080p60/partial_movie_files/PhongReflectionModel/3931933789_329969645_2831800592.mp4'
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/BRDF_Equations/1080p60/partial_movie_files/PhongReflectionModel/3931933789_4098068549_3836817988.mp4'
+file 'file:/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/media/videos/BRDF_Equations/1080p60/partial_movie_files/PhongReflectionModel/3931933789_329969645_2182755639.mp4'
