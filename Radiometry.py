@@ -30,6 +30,10 @@ class Radiometry(Scene):
 
         self.play(Unwrite(title, reverse=False))
 
+# Short Introduction
+
+#Arrow anim, inversesquare anim, 
+
 # Begin Info
 
         radiance = MathTex(r"L(x,\omega) \equiv \frac{dI(x \omega)}{dA} = \frac{d^2 \Phi (x, \omega)}{d \omega dA}")
@@ -38,13 +42,23 @@ class Radiometry(Scene):
 
         # Same anim as before, but only first arrow. 
 
-        self.play(FadeOut(radiance))
+        self.play(Unwrite(radiance), reverse=False)
 
         self.wait()
 
         irradiance = MathTex(r"E(x) = lim _{\Delta A \to 0} \frac{\Delta \Phi}{\Delta A} = \frac{d \Phi}{dA}")
         formula2 = MathTex(r"E(x, \omega) = L(x, \omega) \cos \theta d\omega") 
         self.play(Write(irradiance, run_time=2))
+        self.wait()
+
+        self.play(Unwrite(irradiance), reverse=False)
+
+        grid = NumberPlane(x_range=(-10, 10, 1), y_range=(-6.0, 6.0, 1))
+
+        self.add(grid)
+        self.play(
+            Create(grid, run_time=3, lag_ratio=0.1),
+        )
         self.wait()
 
         #Same anim, continuatuin, but with second arrow.
