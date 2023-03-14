@@ -26,10 +26,10 @@ class Radiometry(Scene):
 
 # Add a fancy light animation here.
 
-        #radarrow = [Arrow(2 * LEFT, 2 * DR)]
-        #irrarrow = [Arrow(2 * DR, 2 * UR)]
-        #self.play(GrowArrow(radarrow))
-        #self.play(GrowArrow(irrarrow))
+        arrows = [Arrow(2 * UL, 1 * DR), Arrow(1 * DR, 2 * UR)]
+        VGroup(*arrows).set_x(0).arrange(buff=1)
+        self.play(GrowArrow(arrows[0]))
+        self.play(GrowArrow(arrows[1]))
 
         self.play(Unwrite(title, reverse=False))
 
