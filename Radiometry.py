@@ -1,13 +1,15 @@
 from manim import *
+import numpy as np
 
 #Colorlab Intro
 
 class Radiometry(Scene):
     def construct(self):
 
-        colorlab = ImageMobject("CLsmall.png")
-        colorlab.scale(1.2)
-        colorlabtext = Text("Colourlab")
+        colorlab = ImageMobject("CLsmall.png").move_to([3,0.5,0])
+        colorlab.scale(2)
+        colorlabtext = Text("Colourlab").move_to([-1,0,0])
+        colorlabtext.scale(2)
 
         self.wait()
 
@@ -20,14 +22,17 @@ class Radiometry(Scene):
 
 # Title
         title = Text("Radiometry")
+        title.scale(1.5)
         self.play(Write(title))
 
         self.wait(2)
 
 # Add a fancy light animation here.
 
+# Mirror Arrows
+
         arrows = [Arrow(2 * UL, 1 * DR), Arrow(1 * DR, 2 * UR)]
-        VGroup(*arrows).set_x(-1).arrange(buff=0)
+        #VGroup(*arrows).set_x(-1).arrange(buff=0)
         self.play(GrowArrow(arrows[0]))
         self.play(GrowArrow(arrows[1]))
         self.wait()
@@ -57,13 +62,15 @@ class Radiometry(Scene):
 
         self.play(Unwrite(irradiance), reverse=False)
 
+# Grid
+
         grid = NumberPlane(x_range=(-10, 10, 1), y_range=(-6.0, 6.0, 1))
 
-        self.add(grid)
-        self.play(
-            Create(grid, run_time=3, lag_ratio=0.1),
-        )
-        self.wait()
+        #self.add(grid)
+        #self.play(
+        #    Create(grid, run_time=3, lag_ratio=0.1),
+        #)
+        #self.wait()
 
         #Same anim, continuatuin, but with second arrow.
 
@@ -79,3 +86,19 @@ class Radiometry(Scene):
     #    entiresphereformula = MathTex(r"I = \frac{\Phi}{4 \pi}")
 
      #   luminance = MathTex(r"Y = \int _{\lambda} L(\lambda) V(\lambda) d(\lambda)")
+
+# Graph
+
+        #ax=Axes(x_range=[-5,5,0.5], y_range=[-3,3,0.5], 
+        #        x_axis_config={"numbers_to_include": np.arange(-5,5,1)}, 
+        #        y_axis_config={"numbers_to_include": [1]})
+        #ax_labels=ax.get_axis_labels()
+        #ax_group=VGroup(ax, ax_labels)
+       # 
+       # self.play(Create(ax_group), run_time=6)
+       # self.wait()
+
+
+
+
+     
