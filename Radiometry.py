@@ -35,10 +35,14 @@ class Radiometry(Scene):
 
 # Mirror Arrows
 
-        arrows = [Arrow(2 * UL, 1 * DR), Arrow(1 * DR, 2 * UR)]
+        #arrows = [Arrow(2 * UL, 1 * DR), Arrow(1 * DR, 2 * UR)]
+        irrarrow = Arrow(2 * UL, 1 * DR)
+        radarrow = Arrow(1 * DR, 2 * UR)
         #VGroup(*arrows).set_x(-1).arrange(buff=0)
-        self.play(GrowArrow(arrows[0]))
-        self.play(GrowArrow(arrows[1]))
+        #self.play(GrowArrow(arrows[0]))
+        #self.play(GrowArrow(arrows[1]))
+        self.play(GrowArrow(irrarrow))
+        self.play(GrowArrow(radarrow))
         self.wait()
 
         self.play(Unwrite(title, reverse=False))
