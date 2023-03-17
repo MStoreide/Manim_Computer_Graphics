@@ -63,8 +63,8 @@ class Software(Scene):
         origin = Matrix([['x'],['y'],['z']])
         transform = Matrix([['\\Delta', 'x'],['\\Delta', 'y'],['\\Delta', 'z']]).set_column_colors(RED)
 
-        g = Group(origin, transform).arrange_in_grid(buff=2)
-        self.add(g)
+        self.add(origin)
+        self.add(transform)     
         self.wait(2)
 
 # Have a video of the object moving in 3D space, and the corresponding matrix. 
