@@ -46,6 +46,7 @@ class Radiometry(Scene):
         self.wait()
 
         self.play(Unwrite(title, reverse=False))
+        self.remove(irrarrow, radarrow)
 
 # Short Introduction
 
@@ -74,11 +75,11 @@ class Radiometry(Scene):
 
         grid = NumberPlane(x_range=(-10, 10, 1), y_range=(-6.0, 6.0, 1))
 
-        #self.add(grid)
-        #self.play(
-        #    Create(grid, run_time=3, lag_ratio=0.1),
-        #)
-        #self.wait()
+        self.add(grid)
+        self.play(
+            Create(grid, run_time=3, lag_ratio=0.1),
+        )
+        self.wait()
 
         #Same anim, continuatuin, but with second arrow.
 
