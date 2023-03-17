@@ -6,7 +6,7 @@ import numpy as np
 class Radiometry(Scene):
     def construct(self):
 
-        colorlab = ImageMobject("CLsmall.png").move_to([3,0.5,0])
+        colorlab = ImageMobject("Logos\CLsmall.png").move_to([3,0.5,0])
         colorlab.scale(2)
         colorlabtext = Text("Colourlab").move_to([-1,0,0])
         colorlabtext.scale(2)
