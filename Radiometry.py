@@ -85,17 +85,19 @@ class Radiometry(Scene):
         #Same anim, continuatuin, but with second arrow.
 
 
- #       inversesquarelaw = MathTex(r"E \propto \frac{1}{r^2}")
+        inversesquarelaw = MathTex(r"E \propto \frac{1}{r^2}")
 
- #       lambert = MathTex(r"E(x) +propto \Phi \frac{\cos \theta}{r^2}")
+        lambert = MathTex(r"E(x) +propto \Phi \frac{\cos \theta}{r^2}")
 
-  #      radiantexitance = MathTex(r"M(x) \equiv \frac{d \Phi _O}{dA}")
+        radiantexitance = MathTex(r"M(x) \equiv \frac{d \Phi _O}{dA}")
 
-   #     radiantintensity = MathTex(r"I(\omega) = lim _{\Delta \omega \to 0} \frac{\Delta \Phi}{\Delta \omega} = \frac {d \Phi}{d \omega}")
+        radiantintensity = MathTex(r"I(\omega) = lim _{\Delta \omega \to 0} \frac{\Delta \Phi}{\Delta \omega} = \frac {d \Phi}{d \omega}")
 
-    #    entiresphereformula = MathTex(r"I = \frac{\Phi}{4 \pi}")
+        entiresphereformula = MathTex(r"I = \frac{\Phi}{4 \pi}")
 
-     #   luminance = MathTex(r"Y = \int _{\lambda} L(\lambda) V(\lambda) d(\lambda)")
+        luminance = MathTex(r"Y = \int _{\lambda} L(\lambda) V(\lambda) d(\lambda)")
+
+        BRDF = MathTex(r"f_r(\omega _i, \omega _r) = \frac {L_r (\omega _r)}{E_i (\omega _i)} = \frac{L_r (\omega _r)}{L_i (\omega _i) \cos \theta _i d \omega _i}")
 
 # Graph
 

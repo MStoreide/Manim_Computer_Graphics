@@ -39,6 +39,18 @@ class Objects(Scene):
 
 # Parametric Objects
 
+        #Cubic Bézier Curve Formula
+
+        formula = MathTex(r"B(t) = (1-t)^3 p_0 + 3t(1-t)^2 p_1 + 3t^2(1-t) p_2 + t^3 p_3")
+
+        #General form n-th order Bézier
+
+        formula = MathTex(r"B(t) = \sum_{i=0}^n (ni)(1-t)^n-i t^i p_i")
+
+        #Bernstein Polynomial
+
+        formula = MathTex(r"B(t) = (1-t)^3 p_0 + 3t(1-t)^2 p_1 + 3t^2 (1-t)p_2 + t^3 p_3")
+
 #NURBS Objects
 
         p1 = np.array([-3, 1, 0])
