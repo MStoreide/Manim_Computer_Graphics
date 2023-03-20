@@ -21,9 +21,8 @@ class ReflectionModels(Scene):
         colorlabcorner.scale(0.5)
         NTNU = ImageMobject(f"/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/NTNU.png").move_to([0, 2, 0])
         NTNU.scale(0.3)
-        NTNUcorner = ImageMobject(f"/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/NTNU.png").to_corner(UP + LEFT)
+        NTNUcorner = ImageMobject(f"/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/NTNU.png").to_corner(DOWN + LEFT)
         NTNUcorner.scale(0.2)
-    #ntnu = ImageMobject(NTNULOGO)
 
         self.wait()
 
@@ -71,7 +70,6 @@ class ReflectionModels(Scene):
 
 # Flat Gouraud Phong
 
-#Fix text spacing
         Flabel = Text("Flat shading: One surface normal, hence one color for each polygon", font_size=25, t2c={'[:13]':BLUE_E}).move_to([0, -2.6, 0])
         Glabel = Text("Gouraud shading: Color for each point \n is computed by interpolating the color of the vertices", font_size=25, t2c={'[:16]':GREEN_E}).move_to([0, -2.8, 0])
         Plabel = Text("Phong shading: Surface normal at each \n point is interpolated and used to compute \n the color of each point", font_size=25, t2c={'[:14]':RED_E}).move_to([0, -3, 0])
@@ -100,13 +98,13 @@ class ReflectionModels(Scene):
         self.wait(4)
 
         phongarrows = [
-                Arrow(np.array([-3, -2, 0]), np.array([-4.5, 2.7, 0])),
-                Arrow(np.array([-2, -2, 0]), np.array([-3, 3.3, 0])),
-                Arrow(np.array([-1, -2, 0]), np.array([-1.5, 3.6, 0])),
-                Arrow(np.array([0, -2, 0]), np.array([0, 3.8, 0])),
-                Arrow(np.array([1, -2, 0]), np.array([1.5, 3.6, 0])),
-                Arrow(np.array([2, -2, 0]), np.array([3, 3.3, 0])),
-                Arrow(np.array([3, -2, 0]), np.array([4.5, 2.7, 0]))
+                Arrow(np.array([-3, -2, 0]), np.array([-4.5, 2.7, 0]), stroke_width=2),
+                Arrow(np.array([-2, -2, 0]), np.array([-3, 3.3, 0]), stroke_width=2),
+                Arrow(np.array([-1, -2, 0]), np.array([-1.5, 3.6, 0]), stroke_width=2),
+                Arrow(np.array([0, -2, 0]), np.array([0, 3.8, 0]), stroke_width=2),
+                Arrow(np.array([1, -2, 0]), np.array([1.5, 3.6, 0]), stroke_width=2),
+                Arrow(np.array([2, -2, 0]), np.array([3, 3.3, 0]), stroke_width=2),
+                Arrow(np.array([3, -2, 0]), np.array([4.5, 2.7, 0]), stroke_width=2)
         ]
         self.play(FadeOut(interpolation), Transform(Flabel, Plabel))
         self.play(GrowArrow(phongarrows[0]),
@@ -119,7 +117,21 @@ class ReflectionModels(Scene):
         )
         self.wait(2)
 
-        self.play(FadeOut(gouraudarrowl, gouraudarrowr, gouraudsurface))
+        self.play(FadeOut(gouraudarrowl, gouraudarrowr, gouraudsurface, Flabel, phongarrows[0], phongarrows[1], phongarrows[2], phongarrows[3], phongarrows[4], phongarrows[5], phongarrows[6]))
         self.wait()
 
 # List all shadings next to each other here. 
+
+        Flabel2 = Text("Flat shading: One surface normal, hence one color for each polygon", font_size=20, t2c={'[:13]':BLUE_E})
+        Glabel2 = Text("Gouraud shading: Color for each point \n is computed by interpolating the color of the vertices", font_size=20, t2c={'[:16]':GREEN_E})
+        Plabel2 = Text("Phong shading: Surface normal at each \n point is interpolated and used to compute \n the color of each point", font_size=20, t2c={'[:14]':RED_E})
+
+        labels = VGroup(Flabel2, Glabel2, Plabel2)
+
+        self.play(Write(labels))
+        
+       # self.play(Transform(Flabel, Plabel2), Write(Flabel2), Write(Glabel2))
+        self.wait()
+
+# Fix text positioning, add small examples for each approach
+# Find renders/images as examples as well.
