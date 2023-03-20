@@ -5,6 +5,7 @@ import numpy as np
 
 class Radiometry(Scene):
     def construct(self):
+        self.camera.background_color = GRAY_E
 
         colorlab = ImageMobject("Logos\CLsmall.png").move_to([3,0.5,0])
         colorlab.scale(2)

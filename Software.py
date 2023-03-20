@@ -1,7 +1,8 @@
-from manim import *
+from manim import *     
 
 class Software(Scene):
     def construct(self):
+        self.camera.background_color = GRAY_E
 
 #Intro
 
@@ -42,19 +43,14 @@ class Software(Scene):
         cinema4d = ImageMobject("Cinema 4D.png").move_to([3,-2,0])
         cinema4d.scale(0.5)
 
-        #self.play(FadeIn(blender, shift=RIGHT*2))
-        #self.wait(0.3)
-        #self.play(FadeIn(maya), shift=RIGHT*2)
-        #self.wait(0.3)
-        #self.play(FadeIn(cinema4d), shift=RIGHT*2)
-        #self.wait()
-
-        g1 = Group(blender, maya, cinema4d).arrange_in_grid(buff=2)
-        self.add(g1)
+        self.play(FadeIn(blender, shift=RIGHT*2))
+        self.wait(0.3)
+        self.play(FadeIn(maya), shift=RIGHT*2)
+        self.wait(0.3)
+        self.play(FadeIn(cinema4d), shift=RIGHT*2)
         self.wait()
-        self.remove(g1)
 
-        #self.play(FadeOut(blender, maya, cinema4d))
+        self.play(FadeOut(blender, maya, cinema4d))
 
 # APIs and Programming
 
