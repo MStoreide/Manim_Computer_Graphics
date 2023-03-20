@@ -72,9 +72,9 @@ class ReflectionModels(Scene):
 # Flat Gouraud Phong
 
 #Fix text spacing
-        Flabel = Text("Flat shading: One surface normal, hence one color for each polygon", font_size=25, t2c={'[:13]':BLUE_E}).move_to([0, -2.4, 0])
-        Glabel = Text("Gouraud shading: Color for each point \\linebreak is computed by interpolating the color of the vertices", font_size=25, t2c={'[:16]':GREEN_E}).move_to([0, -2.4, 0])
-        Plabel = Text("Phong shading: Surface normal at each \\linebreak point is interpolated and used to compute \\linebreak the color of each point", font_size=25, t2c={'[:14]':RED_E}).move_to([0, -2.4, 0])
+        Flabel = Text("Flat shading: One surface normal, hence one color for each polygon", font_size=25, t2c={'[:13]':BLUE_E}).move_to([0, -2.6, 0])
+        Glabel = Text("Gouraud shading: Color for each point \n is computed by interpolating the color of the vertices", font_size=25, t2c={'[:16]':GREEN_E}).move_to([0, -2.8, 0])
+        Plabel = Text("Phong shading: Surface normal at each \n point is interpolated and used to compute \n the color of each point", font_size=25, t2c={'[:14]':RED_E}).move_to([0, -3, 0])
 
         gouraudsurface = Graph([1, 2], [(1, 2)],
                 layout={1: [-4, -2, 0], 2: [4, -2, 0]}
@@ -97,7 +97,7 @@ class ReflectionModels(Scene):
         interpolation = CurvedArrow(np.array([-2, 0, 0]), np.array([2, 0, 0]), radius = -5)
         self.play(FadeIn(interpolation), Transform(Flabel, Glabel))
 
-        self.wait(2)
+        self.wait(4)
 
         phongarrows = [
                 Arrow(np.array([-3, -2, 0]), np.array([-4.5, 2.7, 0])),
@@ -108,7 +108,7 @@ class ReflectionModels(Scene):
                 Arrow(np.array([2, -2, 0]), np.array([3, 3.3, 0])),
                 Arrow(np.array([3, -2, 0]), np.array([4.5, 2.7, 0]))
         ]
-        self.play(FadeOut(interpolation), Transform(Glabel, Plabel))
+        self.play(FadeOut(interpolation), Transform(Flabel, Plabel))
         self.play(GrowArrow(phongarrows[0]),
                 GrowArrow(phongarrows[1]),
                 GrowArrow(phongarrows[2]),
@@ -122,4 +122,4 @@ class ReflectionModels(Scene):
         self.play(FadeOut(gouraudarrowl, gouraudarrowr, gouraudsurface))
         self.wait()
 
-
+# List all shadings next to each other here. 
