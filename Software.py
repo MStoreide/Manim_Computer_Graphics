@@ -56,8 +56,8 @@ class Software(Scene):
 
 # Transformation examples
 
-        origin = Matrix([['x'],['y'],['z']])
-        transform = Matrix([['\\Delta', 'x'],['\\Delta', 'y'],['\\Delta', 'z']]).set_column_colors(RED)
+        origin = Matrix([['x'],['y'],['z']]).move_to([-1,0,0])
+        transform = Matrix([['\\Delta', 'x'],['\\Delta', 'y'],['\\Delta', 'z']]).set_column_colors(RED).move_to([1,0,0])
 
         self.add(origin)
         self.add(transform)     
