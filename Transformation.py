@@ -54,7 +54,10 @@ class Transformation(Scene):
 
 #Should make a video here that shows how we move objects to the origin, scale, and then move it back. With grids.
 
-#Rotation
+
+
+
+## Rotation ##
 
 #Rotation around the origin
 
@@ -66,6 +69,12 @@ class Transformation(Scene):
 
 # Coordinate system
 
-        axes = Axes()
+        axes = Axes(
+            x_range=[-1, 1, 0.1],
+            y_range=[-1, 1, 0.1],
+            x_length=5,
+            y_length=5
+        )
+
         self.play(Create(axes), run_time=2)
         self.wait(2)
