@@ -1,6 +1,8 @@
 from manim import *
 import numpy as np
 
+# Split all of these BRDF into separate videos?
+
 #Colorlab Intro
 
 class ReflectionModels(Scene):
@@ -15,21 +17,26 @@ class ReflectionModels(Scene):
         colorlabtext.scale(2)
         cg = Text("IDIG4002 - Computer Graphics").move_to([0,-1,0])
         cg.scale(0.5)
-
+        colorlabcorner = ImageMobject("/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/Logos/CLsmall.png/").to_corner(DOWN + RIGHT)
+        colorlabcorner.scale(0.5)
+        NTNU = ImageMobject(f"/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/NTNU.png").move_to([0, 2, 0])
+        NTNU.scale(0.3)
+        NTNUcorner = ImageMobject(f"/home/markus/Manim_Computer_Graphics/Manim_Computer_Graphics/NTNU.png").to_corner(UP + LEFT)
+        NTNUcorner.scale(0.2)
     #ntnu = ImageMobject(NTNULOGO)
 
         self.wait()
 
-        self.play(FadeIn(colorlab, shift=RIGHT*2), Write(colorlabtext, shift=LEFT*2), Write(cg, run_time=0.7))
+        self.play(FadeIn(colorlab, shift=RIGHT*2), FadeIn(NTNU, shift=RIGHT*2), Write(colorlabtext, shift=LEFT*2), Write(cg, run_time=0.7))
         self.wait(1)
 
-        self.play(FadeOut(colorlab, shift=LEFT), Unwrite(colorlabtext, shift=RIGHT), Unwrite(cg, run_time=0.7))
+        self.play(Transform(colorlab, colorlabcorner), Transform(NTNU, NTNUcorner), Unwrite(colorlabtext, shift=RIGHT), Unwrite(cg, run_time=0.7))
 
         self.wait()
 
 # Title
             
-        title = Text("3D Objects")
+        title = Text("Reflection Models")
         title.scale(1.5)
         self.play(Write(title))
         self.wait(2)
@@ -64,13 +71,10 @@ class ReflectionModels(Scene):
 
 # Flat Gouraud Phong
 
-        Flabel = Text("Flat shading: One surface normal, hence one color for each polygon")
-        Glabel = Text("Gouraud shading: Color for each point is computed by interpolating the color of the vertices")
-        Plabel = Text("Phong shading: Surface normal at each point is interpolated and used to compute the color of each point")
-        Glabel.next_to(Flabel, DOWN, buff=0.5)
-        Plabel.next_to(Glabel, DOWN, buff=0.5)
-
-#Then visualize the same as on slide 14 of the Reflection Models
+#Fix text spacing
+        Flabel = Text("Flat shading: One surface normal, hence one color for each polygon", font_size=25, t2c={'[:13]':BLUE_E}).move_to([0, -2.4, 0])
+        Glabel = Text("Gouraud shading: Color for each point \\linebreak is computed by interpolating the color of the vertices", font_size=25, t2c={'[:16]':GREEN_E}).move_to([0, -2.4, 0])
+        Plabel = Text("Phong shading: Surface normal at each \\linebreak point is interpolated and used to compute \\linebreak the color of each point", font_size=25, t2c={'[:14]':RED_E}).move_to([0, -2.4, 0])
 
         gouraudsurface = Graph([1, 2], [(1, 2)],
                 layout={1: [-4, -2, 0], 2: [4, -2, 0]}
@@ -80,7 +84,7 @@ class ReflectionModels(Scene):
 
         normalarrow = Arrow(np.array([0, -2, 0]), np.array([0, 2, 0]))
 
-        self.play(GrowArrow(normalarrow))
+        self.play(GrowArrow(normalarrow), Write(Flabel))
         self.wait(2)
         self.play(FadeOut(normalarrow))
 
@@ -91,8 +95,9 @@ class ReflectionModels(Scene):
         self.wait(2)
 
         interpolation = CurvedArrow(np.array([-2, 0, 0]), np.array([2, 0, 0]), radius = -5)
-        self.play(FadeIn(interpolation))
-        self.wait()
+        self.play(FadeIn(interpolation), Transform(Flabel, Glabel))
+
+        self.wait(2)
 
         phongarrows = [
                 Arrow(np.array([-3, -2, 0]), np.array([-4.5, 2.7, 0])),
@@ -103,7 +108,7 @@ class ReflectionModels(Scene):
                 Arrow(np.array([2, -2, 0]), np.array([3, 3.3, 0])),
                 Arrow(np.array([3, -2, 0]), np.array([4.5, 2.7, 0]))
         ]
-
+        self.play(FadeOut(interpolation), Transform(Glabel, Plabel))
         self.play(GrowArrow(phongarrows[0]),
                 GrowArrow(phongarrows[1]),
                 GrowArrow(phongarrows[2]),
@@ -114,7 +119,7 @@ class ReflectionModels(Scene):
         )
         self.wait(2)
 
-        self.play(FadeOut(gouraudarrowl, gouraudarrowr))
+        self.play(FadeOut(gouraudarrowl, gouraudarrowr, gouraudsurface))
         self.wait()
 
 
