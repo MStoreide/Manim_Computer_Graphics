@@ -122,9 +122,9 @@ class ReflectionModels(Scene):
 
 # List all shadings next to each other here. 
 
-        Flabel2 = Text("Flat shading: One surface normal, hence one color for each polygon", font_size=20, t2c={'[:13]':BLUE_E})
-        Glabel2 = Text("Gouraud shading: Color for each point \n is computed by interpolating the color of the vertices", font_size=20, t2c={'[:16]':GREEN_E})
-        Plabel2 = Text("Phong shading: Surface normal at each \n point is interpolated and used to compute \n the color of each point", font_size=20, t2c={'[:14]':RED_E})
+        Flabel2 = Text("Flat shading: One surface normal, hence one color for each polygon", font_size=20, t2c={'[:13]':BLUE_E}).move_to([-1.5, 3, 0])
+        Glabel2 = Text("Gouraud shading: Color for each point \n is computed by interpolating the color of the vertices", font_size=20, t2c={'[:16]':GREEN_E}).next_to(Flabel2, DOWN, buff=1)
+        Plabel2 = Text("Phong shading: Surface normal at each \n point is interpolated and used to compute \n the color of each point", font_size=20, t2c={'[:14]':RED_E}).next_to(Glabel2, DOWN, buff=1)
 
         labels = VGroup(Flabel2, Glabel2, Plabel2)
 
