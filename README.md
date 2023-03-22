@@ -3,8 +3,7 @@ Repository for supplementary videos for the IDIG4002 Computer Graphics Course at
 Made by Markus Sebastian Bakken Storeide
 
 # Content
-Videos cover:
-**Work in progress**
+Videos cover:    (*Work in progress*)
 
 - Parametric Modeling
 - Transformations
