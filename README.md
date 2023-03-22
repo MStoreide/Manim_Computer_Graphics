@@ -4,7 +4,7 @@ Made by Markus Sebastian Bakken Storeide
 
 # Content
 Videos cover:
-## Work in progress ##
+**Work in progress**
 
 - Parametric Modeling
 - Transformations
