@@ -1,8 +1,6 @@
 from manim import *
 import numpy as np
 
-# Split all of these BRDF into separate videos?
-
 #Colorlab Intro
 
 class ReflectionModels(Scene):
